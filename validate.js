@@ -1,7 +1,7 @@
 function checkNID() {
   let nid = (document.getElementById("nid").value).trim();
   if(nid === "") return false;
-  if(isNaN(nid)){
+  if(!/^\d{13}$/.test(nid)){
 	return false;
   }else{
 	return true;
