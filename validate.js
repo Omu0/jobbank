@@ -25,11 +25,10 @@ function checkGender(){
 function checkWorkDays() {
   let num = (document.getElementById("workDays").value).trim();
   if (num === "") return false;
-  if (isNaN(num)) {
-    return false;
-  } else {
-	return true;
-  }
+  if (!/^\d+$/.test(num)) return false;
+  
+  let days = parseInt(num);
+  return days >= 1 && days <= 6;
 }
 
 function validateForm(){
